@@ -1,0 +1,37 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav 
+  #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'push' : 'side'"
+      [opened]="(isHandset$ | async) === true">
+
+    <mat-toolbar>
+      <span class="toolbar-filler">Environment</span>
+      <button 
+      mat-icon-button (click)="drawer.toggle()" 
+      class="mat-icon-button sidenav-toggle-button">
+      </button>
+    </mat-toolbar>
+
+    <mat-nav-list>
+      <a class="matListItem" mat-list-item routerLink="/dev">Dev</a>
+      <a class="matListItem" mat-list-item routerLink="/test">Test</a>
+      <a class="matListItem" mat-list-item routerLink="/stage">Stage</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+        <button 
+        mat-icon-button (click)="drawer.toggle()" 
+        class="mat-icon-button sidenav-toggle-button">
+          <mat-icon aria-label="Menu" class="material-icons">menu</mat-icon>
+        </button>
+      <span>Dashboard</span>
+    </mat-toolbar>
+
+    <!-- Add Content Here -->
+    <app-status-grid></app-status-grid>
+    
+    <app-footer></app-footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>

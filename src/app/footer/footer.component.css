@@ -1,0 +1,12 @@
+.footer-centre{
+    position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  flex: 1 1 auto;
+  
+}
+.spanText{
+    text-align: center;
+  margin: 40%
+}
